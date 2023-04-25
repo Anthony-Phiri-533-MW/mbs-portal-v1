@@ -13,9 +13,9 @@ export class ReportsService {
     private readonly reportsRepo: Repository<Reports>,
   ){}
 
-  create(createReportDto: CreateReportDto) {
+  async create(createReportDto: CreateReportDto): Promise<Reports> {
     const newReport = this.reportsRepo.create(createReportDto)
-    return newReport;
+    return await this.reportsRepo.save(newReport);
   }
 
   findAll() {

@@ -10,12 +10,14 @@ export class ReportsController {
   @Post()
   @UsePipes(ValidationPipe)
   create(@Body() createReportDto: CreateReportDto) {
+    console.log(this.reportsService.create(createReportDto))
     return this.reportsService.create(createReportDto);
   }
 
   @Get()
   async findAll() {
     const reports = this.reportsService.findAll();
+    console.log(reports)
     return reports;
   }
 
