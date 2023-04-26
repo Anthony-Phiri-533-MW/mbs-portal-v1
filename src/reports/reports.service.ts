@@ -22,8 +22,8 @@ export class ReportsService {
     return this.reportsRepo.find()
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} report`;
+  async findOne(id: number) {
+    return await this.reportsRepo.findOne({ where: { id } });
   }
 
   update(id: number, updateReportDto: UpdateReportDto) {

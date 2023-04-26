@@ -4,6 +4,9 @@ import { ProductsModule } from './products/products.module';
 import { Products } from './typeorm';
 import { ReportsModule } from './reports/reports.module';
 import { Reports } from './typeorm/Reports';
+import { Appointments } from './typeorm/Appointments';
+import { BookingInspections } from './typeorm/Inspections';
+import { BookingModule } from './booking/booking.module';
 //import entities from './typeorm';
 
 const defaultOptions = {
@@ -36,8 +39,23 @@ const defaultOptions = {
       name: 'reports',
       entities: [Reports],
     } as any),
+    TypeOrmModule.forRoot({
+      ...defaultOptions,
+      database: 'booking',
+      password: '',
+      name: 'booking',
+      entities: [Appointments],
+    } as any),
+    TypeOrmModule.forRoot({
+      ...defaultOptions,
+      database: 'booking',
+      password: '',
+      name: 'bookingInspections',
+      entities: [BookingInspections],
+    } as any),
     ProductsModule,
     ReportsModule,
+    BookingModule,
   ],
   controllers: [],
   providers: [],
