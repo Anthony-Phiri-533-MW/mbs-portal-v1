@@ -8,6 +8,7 @@ import { Appointments } from './typeorm/Appointments';
 import { BookingInspections } from './typeorm/Inspections';
 import { BookingModule } from './booking/booking.module';
 import { UsersModule } from './users/users.module';
+import { AuthModule } from './auth/auth.module';
 //import entities from './typeorm';
 
 const defaultOptions = {
@@ -58,6 +59,7 @@ const defaultOptions = {
     ReportsModule,
     BookingModule,
     UsersModule,
+    AuthModule,
   ],
   controllers: [],
   providers: [],
