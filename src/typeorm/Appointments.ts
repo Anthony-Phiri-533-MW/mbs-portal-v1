@@ -6,7 +6,7 @@ export class Appointments {
     @PrimaryGeneratedColumn({
         type: "bigint"
     })
-    id: number;
+    appointment_id: number;
 
     @Column()
     name: string;
