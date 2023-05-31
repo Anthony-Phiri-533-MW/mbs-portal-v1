@@ -9,6 +9,8 @@ import { BookingInspections } from './typeorm/Inspections';
 import { BookingModule } from './booking/booking.module';
 import { StandardsModule } from './standards/standards.module';
 import { Standards } from './typeorm/Standards';
+import { UsersModule } from './users/users.module';
+import { Users } from './typeorm/Users';
 //import entities from './typeorm';
 
 const defaultOptions = {
@@ -62,10 +64,18 @@ const defaultOptions = {
       name: 'standards',
       entities: [Standards],
     } as any),
+    TypeOrmModule.forRoot({
+      ...defaultOptions,
+      database: 'users_api',
+      password: '',
+      name: 'users',
+      entities: [Users],
+    } as any),
     ProductsModule,
     ReportsModule,
     BookingModule,
     StandardsModule,
+    UsersModule,
   ],
   controllers: [],
   providers: [],

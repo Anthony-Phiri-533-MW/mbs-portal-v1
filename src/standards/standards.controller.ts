@@ -4,6 +4,7 @@ import { CreateStandardDto } from './dto/create-standard.dto';
 import { UpdateStandardDto } from './dto/update-standard.dto';
 
 @Controller('standards')
+@UsePipes(ValidationPipe)
 export class StandardsController {
   constructor(private readonly standardsService: StandardsService) {}
 

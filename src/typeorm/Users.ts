@@ -2,29 +2,28 @@ import { Entity, PrimaryGeneratedColumn, Column } from "typeorm";
 
 @Entity()
 
-export class Admins {
+export class Users {
     @PrimaryGeneratedColumn({
         type: "bigint"
     })
     id: number;
 
-    @Column({
-        name:"name"
-    })
-    admin_name: string;
-
-    @Column({
-        name:"email"
-    })
-    admin_email: string;
+    @Column()
+    username: string;
 
     @Column()
-    mobile_number: string;
+    email: string;
 
     @Column()
-    admin_code: string;
+    type: string;
+
+    @Column()
+    phonenumber: string;
 
     @Column()
     password: string;
+
+    @Column()
+    role: string;
 
 }
