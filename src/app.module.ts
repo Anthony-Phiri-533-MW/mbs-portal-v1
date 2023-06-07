@@ -11,33 +11,59 @@ import { StandardsModule } from './standards/standards.module';
 import { Standards } from './typeorm/Standards';
 import { UsersModule } from './users/users.module';
 import { Users } from './typeorm/Users';
-import { ConfigModule } from '@nestjs/config';
-import { join } from 'path';
 //import entities from './typeorm';
-//import { SupabaseModule } from './supabase/supabase.module';
-import  SupabaseModule  from '@supabase/supabase-js';
 
 const defaultOptions = {
-  type: 'mysql',
-  host: 'aws.connect.psdb.cloud',
-  username: 'azhrtl0jxgk5a02wreot',
+  type: 'postgres',
+  host: 'db.fuxcvihidghyeqhjtcjq.supabase.co',
+  port: 5432,
+  user: 'postgres',
   synchronize: true,
 };
 
 @Module({
   imports: [
-    //SupabaseModule.forRoot({
-    //  supabaseUrl: 'YOUR_SUPABASE_URL',
-    //  supabaseKey: 'YOUR_SUPABASE_KEY',
-    //}),
-    //SupabaseModule,
-    
-    /*ProductsModule,
+    TypeOrmModule.forRoot({
+      ...defaultOptions,
+      database: 'postgres',
+      password: 'Tony1234@@##1234',
+      entities: [Products],
+    } as any),
+    TypeOrmModule.forRoot({
+      ...defaultOptions,
+      database: 'postgres',
+      password: 'Tony1234@@##1234',
+      entities: [Reports],
+    } as any),
+    TypeOrmModule.forRoot({
+      ...defaultOptions,
+      database: 'postgres',
+      password: 'Tony1234@@##1234',
+      entities: [Appointments],
+    } as any),
+    TypeOrmModule.forRoot({
+      ...defaultOptions,
+      database: 'postgres',
+      password: 'Tony1234@@##1234',
+      entities: [BookingInspections],
+    } as any),
+    TypeOrmModule.forRoot({
+      ...defaultOptions,
+      database: 'postgres',
+      password: 'Tony1234@@##1234',
+      entities: [Standards],
+    } as any),
+    TypeOrmModule.forRoot({
+      ...defaultOptions,
+      database: 'postgres',
+      password: 'Tony1234@@##1234',
+      entities: [Users],
+    } as any),
+    ProductsModule,
     ReportsModule,
     BookingModule,
     StandardsModule,
     UsersModule,
-    ConfigModule.forRoot(),*/
   ],
   controllers: [],
   providers: [],

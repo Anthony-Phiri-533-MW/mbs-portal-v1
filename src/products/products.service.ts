@@ -9,7 +9,7 @@ import { InjectRepository } from '@nestjs/typeorm';
 export class ProductsService {
 
   constructor(
-    @InjectRepository(Products, 'w')
+    @InjectRepository(Products)
     private readonly productsRepo: Repository<Products>,
   ){}
 

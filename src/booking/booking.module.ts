@@ -6,7 +6,10 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { BookingInspections } from 'src/typeorm/Inspections';
 
 @Module({
-  imports:[],
+  imports:[
+    TypeOrmModule.forFeature([Booking,]),
+    TypeOrmModule.forFeature([BookingInspections,])
+  ],
   controllers: [BookingController],
   providers: [BookingService]
 })

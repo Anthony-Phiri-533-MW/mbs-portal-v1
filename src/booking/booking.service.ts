@@ -3,12 +3,11 @@ import { CreateBookingDto } from './dto/create-booking.dto';
 import { UpdateBookingDto } from './dto/update-booking.dto';
 import { CreateInspectionsDto } from './dto/create-inspection.dto';
 import { UpdateInspectionDto } from './dto/update-inspection.dto';
-import { Booking } from './entities/booking.entity';
+import { Booking } from '../typeorm/Booking';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { Appointments } from 'src/typeorm/Appointments';
-import { BookingInspections } from 'src/typeorm/Inspections';
-import { ConfigService } from '@nestjs/config';
+
+import { BookingInspections } from '../typeorm/Inspections';
 
 @Injectable()
 export class BookingService {
@@ -16,7 +15,7 @@ export class BookingService {
   constructor(
     @InjectRepository(Booking)
     private readonly bookingRepo: Repository<Booking>,
-    @InjectRepository(BookingInspections, 'bookingInspections')
+    @InjectRepository(BookingInspections)
     private readonly inspectionRepo: Repository<BookingInspections>
   ){}
 

@@ -9,7 +9,7 @@ import { UpdateStandardDto } from './dto/update-standard.dto';
 export class StandardsService {
 
   constructor(
-    @InjectRepository(Standards, 'standards')
+    @InjectRepository(Standards)
     private readonly standardsRepo: Repository<Standards>,
   ){}
 

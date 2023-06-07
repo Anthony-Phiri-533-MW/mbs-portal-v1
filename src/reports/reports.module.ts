@@ -8,7 +8,7 @@ import { ValidateReportMiddleware } from './middleware/validate-report.middlewar
 import { RequestMethod } from '@nestjs/common/enums';
 
 @Module({
-  imports: [],
+  imports: [TypeOrmModule.forFeature([Reports,])],
   controllers: [ReportsController],
   providers: [ReportsService]
 })
