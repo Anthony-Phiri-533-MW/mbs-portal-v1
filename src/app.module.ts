@@ -17,7 +17,7 @@ const defaultOptions = {
   type: 'postgres',
   host: 'db.fuxcvihidghyeqhjtcjq.supabase.co',
   port: 5432,
-  user: 'postgres',
+  username: 'postgres',
   synchronize: true,
 };
 
