@@ -29,6 +29,9 @@ const defaultOptions = {
   host: 'aws.connect.psdb.cloud',
   password: 'pscale_pw_UfqBI2PAC1mOCjB3RBQNe5iAo301FbfCZP28ALp185G',
   synchronize: true,
+  ssl: {
+    rejectUnauthorized: false,
+  },
 };
 
 @Module({
