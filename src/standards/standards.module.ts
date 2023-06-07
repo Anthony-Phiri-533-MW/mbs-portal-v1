@@ -5,7 +5,7 @@ import { Standards } from 'src/typeorm/Standards';
 import { TypeOrmModule } from '@nestjs/typeorm';
 
 @Module({
-  imports: [TypeOrmModule.forFeature([Standards,],'standards')],
+  imports: [],
   controllers: [StandardsController],
   providers: [StandardsService]
 })

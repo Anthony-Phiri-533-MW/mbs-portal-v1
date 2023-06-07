@@ -11,71 +11,33 @@ import { StandardsModule } from './standards/standards.module';
 import { Standards } from './typeorm/Standards';
 import { UsersModule } from './users/users.module';
 import { Users } from './typeorm/Users';
+import { ConfigModule } from '@nestjs/config';
+import { join } from 'path';
 //import entities from './typeorm';
+//import { SupabaseModule } from './supabase/supabase.module';
+import  SupabaseModule  from '@supabase/supabase-js';
 
 const defaultOptions = {
   type: 'mysql',
-  host: 'localhost',
-  port: 3306,
-  username: 'root',
+  host: 'aws.connect.psdb.cloud',
+  username: 'azhrtl0jxgk5a02wreot',
   synchronize: true,
 };
 
 @Module({
   imports: [
-    TypeOrmModule.forRoot({
-      ...defaultOptions,
-      database: 'mbsportal_api_users',
-      password: '',
-      entities: [],
-    } as any),
-    TypeOrmModule.forRoot({
-      ...defaultOptions,
-      database: 'products',
-      password: '',
-      name: 'w',
-      entities: [Products],
-    } as any),
-    TypeOrmModule.forRoot({
-      ...defaultOptions,
-      database: 'reports',
-      password: '',
-      name: 'reports',
-      entities: [Reports],
-    } as any),
-    TypeOrmModule.forRoot({
-      ...defaultOptions,
-      database: 'booking',
-      password: '',
-      name: 'booking',
-      entities: [Appointments],
-    } as any),
-    TypeOrmModule.forRoot({
-      ...defaultOptions,
-      database: 'booking',
-      password: '',
-      name: 'bookingInspections',
-      entities: [BookingInspections],
-    } as any),
-    TypeOrmModule.forRoot({
-      ...defaultOptions,
-      database: 'standards',
-      password: '',
-      name: 'standards',
-      entities: [Standards],
-    } as any),
-    TypeOrmModule.forRoot({
-      ...defaultOptions,
-      database: 'users_api',
-      password: '',
-      name: 'users',
-      entities: [Users],
-    } as any),
-    ProductsModule,
+    //SupabaseModule.forRoot({
+    //  supabaseUrl: 'YOUR_SUPABASE_URL',
+    //  supabaseKey: 'YOUR_SUPABASE_KEY',
+    //}),
+    //SupabaseModule,
+    
+    /*ProductsModule,
     ReportsModule,
     BookingModule,
     StandardsModule,
     UsersModule,
+    ConfigModule.forRoot(),*/
   ],
   controllers: [],
   providers: [],

@@ -8,12 +8,13 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { Appointments } from 'src/typeorm/Appointments';
 import { BookingInspections } from 'src/typeorm/Inspections';
+import { ConfigService } from '@nestjs/config';
 
 @Injectable()
 export class BookingService {
 
   constructor(
-    @InjectRepository(Booking, 'booking')
+    @InjectRepository(Booking)
     private readonly bookingRepo: Repository<Booking>,
     @InjectRepository(BookingInspections, 'bookingInspections')
     private readonly inspectionRepo: Repository<BookingInspections>

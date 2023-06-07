@@ -1,6 +1,9 @@
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
+import { config } from 'dotenv';
+
+config();
 
 const express = require('express')
 //const { useTreblle } = require('treblle')

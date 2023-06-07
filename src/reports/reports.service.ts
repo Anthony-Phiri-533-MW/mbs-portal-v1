@@ -9,7 +9,7 @@ import { UpdateReportDto } from './dto/update-report.dto';
 export class ReportsService {
 
   constructor(
-    @InjectRepository(Reports, 'reports')
+    @InjectRepository(Reports)
     private readonly reportsRepo: Repository<Reports>,
   ){}
 
