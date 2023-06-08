@@ -22,12 +22,22 @@ import { createConnections } from 'typeorm';
   synchronize: true,
 };*/
 
-const defaultOptions = {
+/*const defaultOptions = {
   type: 'mysql',
   database: 'mbsportal_mb',
   username: 'ngml2u38ez12w7qpckmr',
   host: 'aws.connect.psdb.cloud',
   password: 'pscale_pw_UfqBI2PAC1mOCjB3RBQNe5iAo301FbfCZP28ALp185G',
+  synchronize: true,
+  ssl: {
+    rejectUnauthorized: false,
+  },
+};
+*/
+
+const defaultOptions = {
+  type: 'mysql',
+  url: 'postgres://rhgsjbem:r1bYewS5zOZtrzveStYHIvbfJJTX_P8j@lucky.db.elephantsql.com/rhgsjbem',
   synchronize: true,
   ssl: {
     rejectUnauthorized: false,
