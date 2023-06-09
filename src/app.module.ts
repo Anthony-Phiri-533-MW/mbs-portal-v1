@@ -72,8 +72,9 @@ const defaultOptions = {
       username: 'sql7624753',
       password: 'drcpBernuN',
       database: 'sql7624753',
-      synchronize: true, // set to false in production
-      logging: true, // set to false in production
+      synchronize: false, // set to false in production
+      logging: true, // set to false in production,
+      autoLoadEntities: false,
       entities: [Products,Reports,Appointments,BookingInspections,Standards,Users],
     }),
     /*TypeOrmModule.forRoot({
