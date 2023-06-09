@@ -2,13 +2,6 @@ import { ApiProperty } from "@nestjs/swagger";
 import { IsNotEmpty } from "class-validator";
 
 export class CreateBookingDto {
-
-    @ApiProperty({
-        type: String,
-        description: "the auto generated id of the booking"
-    })
-    id: number;
-
     @ApiProperty({
         type: String,
         description: "the name of the user trying to access this endpoint",
