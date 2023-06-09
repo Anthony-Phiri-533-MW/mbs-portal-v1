@@ -35,14 +35,38 @@ import { createConnections } from 'typeorm';
 };
 */
 
+
 const defaultOptions = {
   type: 'mysql',
-  url: 'postgres://rhgsjbem:r1bYewS5zOZtrzveStYHIvbfJJTX_P8j@lucky.db.elephantsql.com/rhgsjbem',
-  synchronize: true,
+  database: 'sql7624753',
+  username: 'sql7624753',
+  host: 'http://sql7.freesqldatabase.com/',
+  password: 'drcpBernuN',
+  port:  3306,
+  synchronize: false,
+  /*
   ssl: {
     rejectUnauthorized: false,
-  },
+    ssl: true,
+  },*/
 };
+
+
+
+/*const defaultOptions = {
+  type: 'postgres',
+  url: 'postgres://rhgsjbem:r1bYewS5zOZtrzveStYHIvbfJJTX_P8j@lucky.db.elephantsql.com/rhgsjbem',
+  synchronize: true,
+  extra: {
+    ssl: {
+      rejectUnauthorized: false,
+      ca: 'google certificate.crt'
+      ssl: true,
+    },
+  }
+};
+*/
+
 
 @Module({
   imports: [
