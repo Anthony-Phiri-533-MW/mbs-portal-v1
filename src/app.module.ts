@@ -13,6 +13,7 @@ import { UsersModule } from './users/users.module';
 import { Users } from './typeorm/Users';
 //import entities from './typeorm';
 import { createConnections } from 'typeorm';
+import { Booking } from './typeorm/Booking';
 
 /*const defaultOptions = {
   type: 'postgres',
@@ -75,7 +76,7 @@ const defaultOptions = {
       synchronize: false, // set to false in production
       logging: true, // set to false in production,
       autoLoadEntities: false,
-      entities: [Products,Reports,Appointments,BookingInspections,Standards,Users],
+      entities: [Products,Reports,Appointments,BookingInspections,Standards,Users, Booking],
     }),
     /*TypeOrmModule.forRoot({
       ...defaultOptions,
