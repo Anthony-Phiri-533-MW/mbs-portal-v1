@@ -4,7 +4,9 @@ import { CreateBookingDto } from './dto/create-booking.dto';
 import { UpdateBookingDto } from './dto/update-booking.dto';
 import { CreateInspectionsDto } from './dto/create-inspection.dto';
 import { UpdateInspectionDto } from './dto/update-inspection.dto';
+import { ApiTags } from '@nestjs/swagger';
 
+@ApiTags("Booking")
 @Controller('booking')
 @UsePipes(ValidationPipe)
 export class BookingController {
