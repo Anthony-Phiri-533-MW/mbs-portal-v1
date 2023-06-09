@@ -2,7 +2,9 @@ import { Controller, Get, Post, Body, Patch, Param, Delete, UsePipes, Validation
 import { StandardsService } from './standards.service';
 import { CreateStandardDto } from './dto/create-standard.dto';
 import { UpdateStandardDto } from './dto/update-standard.dto';
+import { ApiTags } from '@nestjs/swagger';
 
+@ApiTags("Standards")
 @Controller('standards')
 @UsePipes(ValidationPipe)
 export class StandardsController {
