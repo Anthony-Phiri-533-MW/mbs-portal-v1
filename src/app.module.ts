@@ -37,18 +37,13 @@ import { createConnections } from 'typeorm';
 
 
 const defaultOptions = {
-  type: 'mysql',
+  /*type: 'mysql',
   database: 'sql7624753',
   username: 'sql7624753',
   host: 'http://sql7.freesqldatabase.com/',
   password: 'drcpBernuN',
   port:  3306,
-  synchronize: false,
-  /*
-  ssl: {
-    rejectUnauthorized: false,
-    ssl: true,
-  },*/
+  synchronize: false,*/
 };
 
 
@@ -71,11 +66,24 @@ const defaultOptions = {
 @Module({
   imports: [
     TypeOrmModule.forRoot({
+      type: 'mysql',
+      host: 'sql7.freesqldatabase.com',
+      port: 3306,
+      username: 'sql7624753',
+      password: 'drcpBernuN',
+      database: 'sql7624753',
+      synchronize: true, // set to false in production
+      logging: true, // set to false in production
+      entities: [Products,Reports,Appointments,BookingInspections,Standards,Users],
+    }),
+    /*TypeOrmModule.forRoot({
       ...defaultOptions,
       //database: 'postgres',
       //password: 'Tony1234@@##1234',
       entities: [Products],
-    } as any),
+    } as any),*/
+
+    /*
     TypeOrmModule.forRoot({
       ...defaultOptions,
       //database: 'postgres',
@@ -105,7 +113,7 @@ const defaultOptions = {
       //database: 'postgres',
       //password: 'Tony1234@@##1234',
       entities: [Users],
-    } as any),
+    } as any),*/
     ProductsModule,
     ReportsModule,
     BookingModule,
