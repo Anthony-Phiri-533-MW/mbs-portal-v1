@@ -7,7 +7,6 @@ export class CreateBookingDto {
         type: String,
         description: "the auto generated id of the booking"
     })
-    @IsNotEmpty()
     id: number;
 
     @ApiProperty({
