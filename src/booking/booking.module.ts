@@ -7,8 +7,8 @@ import { BookingInspections } from 'src/typeorm/Inspections';
 
 @Module({
   imports:[
-    //TypeOrmModule.forFeature([Booking,]),
-    TypeOrmModule.forFeature([BookingInspections, Booking])
+    TypeOrmModule.forFeature([Booking,]),
+    TypeOrmModule.forFeature([BookingInspections,])
   ],
   controllers: [BookingController],
   providers: [BookingService]
