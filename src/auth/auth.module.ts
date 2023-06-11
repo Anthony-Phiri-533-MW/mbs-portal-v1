@@ -6,6 +6,6 @@ import { UsersService } from 'src/users/users.service';
 
 @Module({
   controllers: [AuthController],
-  providers: [AuthService, MagicLoginStrategy, UsersService]
+  providers: [AuthService, MagicLoginStrategy, /*UsersService*/]
 })
 export class AuthModule {}
