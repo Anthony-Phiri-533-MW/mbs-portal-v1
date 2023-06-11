@@ -14,6 +14,7 @@ import { Users } from './typeorm/Users';
 //import entities from './typeorm';
 import { createConnections } from 'typeorm';
 import { Booking } from './typeorm/Booking';
+import { AuthModule } from './auth/auth.module';
 
 /*const defaultOptions = {
   type: 'postgres',
@@ -74,7 +75,7 @@ const defaultOptions = {
       password: 'drcpBernuN',
       database: 'sql7624753',
       synchronize: false, // set to false in production
-      logging: true, // set to false in production,
+      logging: false, // set to false in production,
       autoLoadEntities: false,
       entities: [Products,Reports,Appointments,BookingInspections,Standards,Users, Booking],
     }),
@@ -121,6 +122,7 @@ const defaultOptions = {
     BookingModule,
     StandardsModule,
     UsersModule,
+    AuthModule,
   ],
   controllers: [],
   providers: [],
