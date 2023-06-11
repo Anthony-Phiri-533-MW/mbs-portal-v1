@@ -14,7 +14,6 @@ import { Users } from './typeorm/Users';
 //import entities from './typeorm';
 import { createConnections } from 'typeorm';
 import { Booking } from './typeorm/Booking';
-import { AuthModule } from './auth/auth.module';
 
 /*const defaultOptions = {
   type: 'postgres',
@@ -122,7 +121,6 @@ const defaultOptions = {
     BookingModule,
     StandardsModule,
     UsersModule,
-    AuthModule,
   ],
   controllers: [],
   providers: [],
