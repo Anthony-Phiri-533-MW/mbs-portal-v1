@@ -17,15 +17,17 @@ export class StandardsController {
   }
 
   @Get()
-  async findAll(@Query('standard_id') standard_id?: string) {
+  async findAll(@Body() any/*standard_id?: string*/) {
     //const standards = this.standardsService.findAll(); 
     //return standards;
 
-    if (standard_id) {
+    /*if (standard_id) {
       return this.standardsService.findOne(standard_id);
     } else {
       return this.standardsService.findAll();
-    }
+    }*/
+
+    return this.standardsService.findAll();
   }
 
   @Get(':standard_id')
