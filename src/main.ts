@@ -2,16 +2,15 @@ import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 import { config } from 'dotenv';
-
 config();
 
 const express = require('express')
 //const { useTreblle } = require('treblle')
 
-const { useNestTreblle } = require('treblle')
+//const { useNestTreblle } = require('treblle')
 
 async function bootstrap() {
-  const { useNestTreblle } = require("treblle");
+  const { useNestTreblle } = require('treblle');
   const app = await NestFactory.create(AppModule);
 
   const config = new DocumentBuilder()
@@ -26,8 +25,8 @@ async function bootstrap() {
   const expressInstance = app.getHttpAdapter().getInstance();
 
   useNestTreblle(expressInstance, {
-    apiKey: "z2MjAchM6yFZ3EP5Yae8rPcsJPJZZaOL",
-    projectId: "qszlbyjJ3Uajg7VU",
+    apiKey: 'fmGGtXEL30hJQsVlsVdPHnrxaMkyC2A5',
+    projectId: 'BdqxfNUHceXOTnjQ',
   });
 
   await app.listen(4000);
