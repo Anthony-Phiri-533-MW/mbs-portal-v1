@@ -11,7 +11,7 @@ const express = require('express')
 
 async function bootstrap() {
   const { useNestTreblle } = require('treblle');
-  const app = await NestFactory.create(AppModule);
+  const app = await NestFactory.create(AppModule, {cors: true});
 
   const config = new DocumentBuilder()
     .setTitle('MBSPortal api')
