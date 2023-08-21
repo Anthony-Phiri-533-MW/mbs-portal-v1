@@ -68,11 +68,11 @@ const defaultOptions = {
   imports: [
     TypeOrmModule.forRoot({
       type: 'mysql',
-      host: 'sql7.freesqldatabase.com',
+      host: 'aws.connect.psdb.cloud',
       port: 3306,
-      username: 'sql7624753',
-      password: 'drcpBernuN',
-      database: 'sql7624753',
+      username: '4uqv5kkhk9ytqmcpbk1b',
+      password: 'pscale_pw_LcPoYo5zDTqTRKegRzUHetdRnr0CF7rYihfDY7TYWEA',
+      database: 'mbsportal_mb',
       synchronize: false, // set to false in production
       logging: false, // set to false in production,
       autoLoadEntities: false,
