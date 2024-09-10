@@ -8,16 +8,15 @@ import { ValidateReportMiddleware } from './middleware/validate-report.middlewar
 import { RequestMethod } from '@nestjs/common/enums';
 
 @Module({
-  imports: [TypeOrmModule.forFeature([Reports,])],
+  imports: [TypeOrmModule.forFeature([Reports])],
   controllers: [ReportsController],
-  providers: [ReportsService]
+  providers: [ReportsService],
 })
-export class ReportsModule implements NestModule{
+export class ReportsModule implements NestModule {
   configure(consumer: MiddlewareConsumer) {
-    consumer.apply(ValidateReportMiddleware)
-    .forRoutes({
-      path: 'reports/:id', 
-      method: RequestMethod.GET
-    })
+    consumer.apply(ValidateReportMiddleware).forRoutes({
+      path: 'reports/:id',
+      method: RequestMethod.GET,
+    });
   }
 }

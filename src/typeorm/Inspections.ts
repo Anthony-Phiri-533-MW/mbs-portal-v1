@@ -1,25 +1,24 @@
-import { Entity, PrimaryGeneratedColumn, Column } from "typeorm";
+import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
 
 @Entity()
+export class BookingInspections {
+  @PrimaryGeneratedColumn({
+    type: 'bigint',
+  })
+  id: number;
 
-export class BookingInspections{
-    @PrimaryGeneratedColumn({
-        type: "bigint"
-    })
-    id: number;
+  @Column()
+  name: string;
 
-    @Column()
-    name: string;
+  @Column()
+  type: string;
 
-    @Column()
-    type: string;
+  @Column()
+  industry: string;
 
-    @Column()
-    industry: string;
+  @Column()
+  mobileNumber: string;
 
-    @Column()
-    mobileNumber: string;
-
-    @Column()
-    email: string;
+  @Column()
+  email: string;
 }

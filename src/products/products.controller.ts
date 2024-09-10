@@ -1,10 +1,21 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete, UsePipes, ValidationPipe, Put, ParseIntPipe } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Post,
+  Body,
+  Param,
+  Delete,
+  UsePipes,
+  ValidationPipe,
+  Put,
+  ParseIntPipe,
+} from '@nestjs/common';
 import { ProductsService } from './products.service';
 import { CreateProductDto } from './dto/create-product.dto';
 import { UpdateProductDto } from './dto/update-product.dto';
 import { ApiTags } from '@nestjs/swagger';
 
-@ApiTags("Products")
+@ApiTags('Products')
 @Controller('products')
 export class ProductsController {
   constructor(private readonly productsService: ProductsService) {}
@@ -33,9 +44,10 @@ export class ProductsController {
 
   @Put(':id')
   updateProductById(
-    @Param('id', ParseIntPipe) id: number, 
-    @Body() updateProductDto: UpdateProductDto){
-      this.productsService.update(id,updateProductDto)
+    @Param('id', ParseIntPipe) id: number,
+    @Body() updateProductDto: UpdateProductDto,
+  ) {
+    this.productsService.update(id, updateProductDto);
   }
 
   @Delete(':id')

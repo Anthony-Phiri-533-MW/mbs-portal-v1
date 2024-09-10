@@ -1,4 +1,3 @@
-
 import { Controller, Get } from '@nestjs/common';
 import { SupabaseService } from './supabase.service';
 

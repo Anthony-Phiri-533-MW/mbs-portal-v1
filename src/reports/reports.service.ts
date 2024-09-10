@@ -7,19 +7,18 @@ import { UpdateReportDto } from './dto/update-report.dto';
 
 @Injectable()
 export class ReportsService {
-
   constructor(
     @InjectRepository(Reports)
     private readonly reportsRepo: Repository<Reports>,
-  ){}
+  ) {}
 
   async create(createReportDto: CreateReportDto): Promise<Reports> {
-    const newReport = this.reportsRepo.create(createReportDto)
+    const newReport = this.reportsRepo.create(createReportDto);
     return await this.reportsRepo.save(newReport);
   }
 
   findAll() {
-    return this.reportsRepo.find()
+    return this.reportsRepo.find();
   }
 
   async findOne(id: number) {
@@ -27,7 +26,7 @@ export class ReportsService {
   }
 
   update(id: number, updateReportDto: UpdateReportDto) {
-    return this.reportsRepo.update({id}, { ...updateReportDto})
+    return this.reportsRepo.update({ id }, { ...updateReportDto });
   }
 
   remove(id: number) {

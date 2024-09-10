@@ -4,14 +4,13 @@ import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 import { config } from 'dotenv';
 config();
 
-const express = require('express')
 //const { useTreblle } = require('treblle')
 
 //const { useNestTreblle } = require('treblle')
 
 async function bootstrap() {
   const { useNestTreblle } = require('treblle');
-  const app = await NestFactory.create(AppModule, {cors: true});
+  const app = await NestFactory.create(AppModule, { cors: true });
 
   const config = new DocumentBuilder()
     .setTitle('MBSPortal api')
@@ -25,8 +24,8 @@ async function bootstrap() {
   const expressInstance = app.getHttpAdapter().getInstance();
 
   useNestTreblle(expressInstance, {
-    apiKey: 'fmGGtXEL30hJQsVlsVdPHnrxaMkyC2A5',
-    projectId: 'BdqxfNUHceXOTnjQ',
+    apiKey: process.env.TREBELL_API_KEY,
+    projectId: process.env.TREBELL_PROJECT_ID,
   });
 
   await app.listen(4000);

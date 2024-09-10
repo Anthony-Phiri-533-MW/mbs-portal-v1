@@ -11,21 +11,20 @@ import { BookingInspections } from '../typeorm/Inspections';
 
 @Injectable()
 export class BookingService {
-
   constructor(
     @InjectRepository(Booking)
     private readonly bookingRepo: Repository<Booking>,
     @InjectRepository(BookingInspections)
-    private readonly inspectionRepo: Repository<BookingInspections>
-  ){}
+    private readonly inspectionRepo: Repository<BookingInspections>,
+  ) {}
 
   create(createBookingDto: CreateBookingDto) {
-    const newBooking = this.bookingRepo.create(createBookingDto)
+    const newBooking = this.bookingRepo.create(createBookingDto);
     return this.bookingRepo.save(newBooking);
   }
 
   findAll() {
-    return this.bookingRepo.find()
+    return this.bookingRepo.find();
   }
 
   async findOne(id: number) {
@@ -33,7 +32,7 @@ export class BookingService {
   }
 
   update(id: number, updateBookingDto: UpdateBookingDto) {
-    return this.bookingRepo.update({id}, { ...updateBookingDto});
+    return this.bookingRepo.update({ id }, { ...updateBookingDto });
   }
 
   remove(id: number) {
@@ -43,12 +42,12 @@ export class BookingService {
   //inspections service methods
 
   createInspection(createInspectionDto: CreateInspectionsDto) {
-    const newInspection = this.inspectionRepo.create(createInspectionDto)
+    const newInspection = this.inspectionRepo.create(createInspectionDto);
     return this.inspectionRepo.save(newInspection);
   }
 
   findAllInspections() {
-    return this.inspectionRepo.find()
+    return this.inspectionRepo.find();
   }
 
   async findOneInspection(id: number) {
@@ -56,7 +55,7 @@ export class BookingService {
   }
 
   updateInspection(id: number, updateInspectionDto: UpdateInspectionDto) {
-    return this.inspectionRepo.update({id}, { ...updateInspectionDto})
+    return this.inspectionRepo.update({ id }, { ...updateInspectionDto });
   }
 
   removeInspection(id: number) {

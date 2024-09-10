@@ -7,19 +7,18 @@ import { UpdateStandardDto } from './dto/update-standard.dto';
 
 @Injectable()
 export class StandardsService {
-
   constructor(
     @InjectRepository(Standards)
     private readonly standardsRepo: Repository<Standards>,
-  ){}
+  ) {}
 
   create(createStandardDto: CreateStandardDto) {
-    const newProduct = this.standardsRepo.create(createStandardDto)
+    const newProduct = this.standardsRepo.create(createStandardDto);
     return this.standardsRepo.save(newProduct);
   }
 
   findAll() {
-    return this.standardsRepo.find()
+    return this.standardsRepo.find();
   }
 
   async findOne(standard_id: string) {
@@ -27,7 +26,7 @@ export class StandardsService {
   }
 
   update(standard_id: string, updateStandardDto: UpdateStandardDto) {
-    return this.standardsRepo.update({ standard_id }, { ...updateStandardDto})
+    return this.standardsRepo.update({ standard_id }, { ...updateStandardDto });
   }
 
   remove(standard_id: string) {

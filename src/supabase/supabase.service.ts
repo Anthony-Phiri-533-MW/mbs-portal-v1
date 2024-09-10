@@ -3,7 +3,9 @@ import { SupabaseClient } from '@supabase/supabase-js';
 
 @Injectable()
 export class SupabaseService {
-  constructor(@Inject('SupabaseClient') private readonly supabase: SupabaseClient) {}
+  constructor(
+    @Inject('SupabaseClient') private readonly supabase: SupabaseClient,
+  ) {}
 
   async findAll(): Promise<any[]> {
     const { data, error } = await this.supabase
@@ -18,4 +20,3 @@ export class SupabaseService {
     return data;
   }
 }
-

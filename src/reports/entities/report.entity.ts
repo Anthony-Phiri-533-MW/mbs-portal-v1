@@ -1,4 +1,4 @@
 export interface Report {
-    manufacturer: string;
-    report: string;
+  manufacturer: string;
+  report: string;
 }

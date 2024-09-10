@@ -1,6 +1,6 @@
 export interface Product {
-    name: string;
-    productnumber: string;
-    manufacturer: string;
-    /* more details */
+  name: string;
+  productnumber: string;
+  manufacturer: string;
+  /* more details */
 }

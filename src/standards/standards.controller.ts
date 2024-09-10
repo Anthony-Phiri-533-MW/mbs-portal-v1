@@ -1,10 +1,20 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete, UsePipes, ValidationPipe, Put, Query } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Post,
+  Body,
+  Param,
+  Delete,
+  UsePipes,
+  ValidationPipe,
+  Put,
+} from '@nestjs/common';
 import { StandardsService } from './standards.service';
 import { CreateStandardDto } from './dto/create-standard.dto';
 import { UpdateStandardDto } from './dto/update-standard.dto';
 import { ApiTags } from '@nestjs/swagger';
 
-@ApiTags("Standards")
+@ApiTags('Standards')
 @Controller('standards')
 @UsePipes(ValidationPipe)
 export class StandardsController {
@@ -17,8 +27,8 @@ export class StandardsController {
   }
 
   @Get()
-  async findAll(@Body() any/*standard_id?: string*/) {
-    //const standards = this.standardsService.findAll(); 
+  async findAll(@Body() any /*standard_id?: string*/) {
+    //const standards = this.standardsService.findAll();
     //return standards;
 
     /*if (standard_id) {
@@ -36,7 +46,10 @@ export class StandardsController {
   }
 
   @Put(':standard_id')
-  update(@Param('standard_id') standard_id: string, @Body() updateStandardDto: UpdateStandardDto) {
+  update(
+    @Param('standard_id') standard_id: string,
+    @Body() updateStandardDto: UpdateStandardDto,
+  ) {
     return this.standardsService.update(standard_id, updateStandardDto);
   }
 

@@ -1,11 +1,19 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete, ValidationPipe } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Post,
+  Body,
+  Param,
+  Delete,
+  ValidationPipe,
+} from '@nestjs/common';
 import { UsersService } from './users.service';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
 import { Put, UsePipes } from '@nestjs/common/decorators';
 import { ApiTags } from '@nestjs/swagger';
 
-@ApiTags("Users")
+@ApiTags('Users')
 @Controller('users')
 @UsePipes(ValidationPipe)
 export class UsersController {

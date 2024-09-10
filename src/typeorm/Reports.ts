@@ -1,16 +1,15 @@
-import { Entity, PrimaryGeneratedColumn, Column } from "typeorm";
+import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
 
 @Entity()
-
 export class Reports {
-    @PrimaryGeneratedColumn({
-        type: "bigint"
-    })
-    id: number;
+  @PrimaryGeneratedColumn({
+    type: 'bigint',
+  })
+  id: number;
 
-    @Column()
-    manufacturer: string;
+  @Column()
+  manufacturer: string;
 
-    @Column()
-    report: string;
+  @Column()
+  report: string;
 }

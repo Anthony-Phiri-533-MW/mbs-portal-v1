@@ -7,19 +7,18 @@ import { InjectRepository } from '@nestjs/typeorm';
 
 @Injectable()
 export class ProductsService {
-
   constructor(
     @InjectRepository(Products)
     private readonly productsRepo: Repository<Products>,
-  ){}
+  ) {}
 
   create(createProductDto: CreateProductDto) {
-    const newProduct = this.productsRepo.create(createProductDto)
+    const newProduct = this.productsRepo.create(createProductDto);
     return this.productsRepo.save(newProduct);
   }
 
   findAll() {
-    return this.productsRepo.find()
+    return this.productsRepo.find();
   }
 
   async findOne(id: number) {
@@ -27,7 +26,7 @@ export class ProductsService {
   }
 
   update(id: number, updateProductDto: UpdateProductDto) {
-    return this.productsRepo.update({id}, { ...updateProductDto})
+    return this.productsRepo.update({ id }, { ...updateProductDto });
   }
 
   remove(id: number) {

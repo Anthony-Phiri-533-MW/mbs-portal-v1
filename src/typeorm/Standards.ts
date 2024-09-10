@@ -1,22 +1,21 @@
-import { Entity, PrimaryGeneratedColumn, Column, PrimaryColumn } from "typeorm";
+import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
 
 @Entity()
+export class Standards {
+  @PrimaryGeneratedColumn({
+    type: 'bigint',
+  })
+  id: number;
 
-export class Standards{
-    @PrimaryGeneratedColumn({
-        type: "bigint"
-    })
-    id: number;
+  @Column()
+  standard_id: string;
 
-    @Column()
-    standard_id: string;
+  @Column()
+  description: string;
 
-    @Column()
-    description: string;
+  @Column()
+  industry: string;
 
-    @Column()
-    industry: string;
-
-    @Column()
-    penalty: string;
+  @Column()
+  penalty: string;
 }

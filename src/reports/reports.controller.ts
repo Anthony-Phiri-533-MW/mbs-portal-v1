@@ -1,10 +1,21 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete, UsePipes, ValidationPipe, ParseIntPipe, Put } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Post,
+  Body,
+  Param,
+  Delete,
+  UsePipes,
+  ValidationPipe,
+  ParseIntPipe,
+  Put,
+} from '@nestjs/common';
 import { ReportsService } from './reports.service';
 import { CreateReportDto } from './dto/create-report.dto';
 import { UpdateReportDto } from './dto/update-report.dto';
 import { ApiTags } from '@nestjs/swagger';
 
-@ApiTags("Reports")
+@ApiTags('Reports')
 @Controller('reports')
 @UsePipes(ValidationPipe)
 export class ReportsController {
@@ -13,14 +24,14 @@ export class ReportsController {
   @Post()
   @UsePipes(ValidationPipe)
   create(@Body() createReportDto: CreateReportDto) {
-    console.log(this.reportsService.create(createReportDto))
+    console.log(this.reportsService.create(createReportDto));
     return this.reportsService.create(createReportDto);
   }
 
   @Get()
   async findAll() {
     const reports = this.reportsService.findAll();
-    console.log(reports)
+    console.log(reports);
     return reports;
   }
 
@@ -36,9 +47,10 @@ export class ReportsController {
 
   @Put(':id')
   updateProductById(
-    @Param('id', ParseIntPipe) id: number, 
-    @Body() updateReportDto: UpdateReportDto){
-      this.reportsService.update(id,updateReportDto)
+    @Param('id', ParseIntPipe) id: number,
+    @Body() updateReportDto: UpdateReportDto,
+  ) {
+    this.reportsService.update(id, updateReportDto);
   }
 
   @Delete(':id')

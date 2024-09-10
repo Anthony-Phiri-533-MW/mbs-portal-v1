@@ -1,4 +1,14 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete, Put, UsePipes, ValidationPipe } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Post,
+  Body,
+  Param,
+  Delete,
+  Put,
+  UsePipes,
+  ValidationPipe,
+} from '@nestjs/common';
 import { BookingService } from './booking.service';
 import { CreateBookingDto } from './dto/create-booking.dto';
 import { UpdateBookingDto } from './dto/update-booking.dto';
@@ -6,14 +16,14 @@ import { CreateInspectionsDto } from './dto/create-inspection.dto';
 import { UpdateInspectionDto } from './dto/update-inspection.dto';
 import { ApiTags } from '@nestjs/swagger';
 
-@ApiTags("Booking")
+@ApiTags('Booking')
 @Controller('booking')
 @UsePipes(ValidationPipe)
 export class BookingController {
   constructor(private readonly bookingService: BookingService) {}
 
   @Post('/appointments')
-  create(@Body() createBookingDto: CreateInspectionsDto) {
+  create(@Body() createBookingDto: CreateBookingDto) {
     return this.bookingService.create(createBookingDto);
   }
 
@@ -37,7 +47,6 @@ export class BookingController {
     return this.bookingService.remove(+id);
   }
 
-
   //inspections routes
   @Post('/inspections')
   createInspections(@Body() createInspectionDto: CreateInspectionsDto) {
@@ -55,7 +64,10 @@ export class BookingController {
   }
 
   @Put('/inspections/:id')
-  updateInspections(@Param('id') id: string, @Body() updateInspectionDto: UpdateInspectionDto) {
+  updateInspections(
+    @Param('id') id: string,
+    @Body() updateInspectionDto: UpdateInspectionDto,
+  ) {
     return this.bookingService.updateInspection(+id, updateInspectionDto);
   }
 
